@@ -1,0 +1,63 @@
+
+#!/bin/sh
+
+##############################################################
+### BEGIN INIT INFO
+# Provides: IMP
+# Required-Start: $network
+# Required-Stop:
+# Default-Start:  3 4 5
+# Default-Stop: 0 1 6
+# Short-Description: start and stop IMP
+# Description: IOnOff Music Player Service
+### END INIT INFO
+
+
+SERVICE_NAME=IMP
+PATH_TO_JAR=/home/lavalamp/app/imp.jar
+PATH_TO_LATEST_JAR=/home/lavalamp/app/ext/imp.jar
+PID_PATH_NAME=/tmp/imp-pid
+case $1 in
+    start)
+	echo "Check latest version..."
+	if [ -f $PATH_TO_LATEST_JAR ]; then
+	   rm -rf $PATH_TO_JAR
+	   mv $PATH_TO_LATEST_JAR $PATH_TO_JAR 
+	   echo "Updated to latest version ..."
+	fi
+        echo "Starting $SERVICE_NAME ..."
+        if [ ! -f $PID_PATH_NAME ]; then
+            nohup java -jar $PATH_TO_JAR /tmp 2>> /dev/null >> /dev/null &
+                        echo $! > $PID_PATH_NAME
+            echo "$SERVICE_NAME started ..."
+        else
+            echo "$SERVICE_NAME is already running ..."
+        fi
+    ;;
+    stop)
+        if [ -f $PID_PATH_NAME ]; then
+            PID=$(cat $PID_PATH_NAME);
+            echo "$SERVICE_NAME stoping ..."
+            kill $PID;
+            echo "$SERVICE_NAME stopped ..."
+            rm $PID_PATH_NAME
+        else
+            echo "$SERVICE_NAME is not running ..."
+        fi
+    ;;
+    restart)
+        if [ -f $PID_PATH_NAME ]; then
+            PID=$(cat $PID_PATH_NAME);
+            echo "$SERVICE_NAME stopping ...";
+            kill $PID;
+            echo "$SERVICE_NAME stopped ...";
+            rm $PID_PATH_NAME
+            echo "$SERVICE_NAME starting ..."
+            nohup java -jar $PATH_TO_JAR /tmp 2>> /dev/null >> /dev/null &
+                        echo $! > $PID_PATH_NAME
+            echo "$SERVICE_NAME started ..."
+        else
+            echo "$SERVICE_NAME is not running ..."
+        fi
+    ;;
+esac

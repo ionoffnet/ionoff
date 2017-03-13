@@ -1,0 +1,1197 @@
+2017-02-07 22:57:37 ERROR LatestVersionDownloader:32 - 
+java.lang.NullPointerException
+	at java.util.Properties$LineReader.readLine(Properties.java:434)
+	at java.util.Properties.load0(Properties.java:353)
+	at java.util.Properties.load(Properties.java:341)
+	at net.ionoff.player.AppProperties.getVersion(AppProperties.java:70)
+	at net.ionoff.player.thread.LatestVersionDownloader.dowloadLatestVersion(LatestVersionDownloader.java:44)
+	at net.ionoff.player.thread.LatestVersionDownloader.run(LatestVersionDownloader.java:29)
+2017-02-07 22:58:27 ERROR IntervalSendStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.sendStatusToCenter(IntervalSendStatusThread.java:36)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.run(IntervalSendStatusThread.java:27)
+2017-02-07 23:00:37 INFO  LatestVersionDownloader:58 - Downloading new version: <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=0.95, maximum-scale=0.95, user-scalable=no" /><!--                                           --><!-- Any title is fine                         --><!--                                           --><title>Site Maintenance</title><style>  body { text-align: center; padding: 15px; }  h1 { font-size: 50px; }  body { font: 20px Helvetica, sans-serif; color: #333; }  article { display: block; text-align: left; width: 650px; margin: 0 auto; }  a { color: #dc8100; text-decoration: none; }  a:hover { color: #333; text-decoration: none; }</style><article><h1 style="width: 250px;    height: 80px;    background-image: url(logo.png);    background-size: 240px 80px;    background-position: -5px 0px;    background-repeat: no-repeat;">    <h2>We&rsquo;ll be back soon!</h2>    <div>        <p>Sorry for the inconvenience but we&rsquo;re performing some maintenance at the moment. We&rsquo;ll be back online shortly!</p>        <p>&mdash; IOnOff Technology</p>    </div></article></html>
+2017-02-07 23:00:37 ERROR LatestVersionDownloader:32 - Illegal char <<> at index 50: D:\Projects\ionoff\ionoff.player\dist\release\imp\<!DOCTYPE html PUBLIC "-\W3C\DTD HTML 4.01 Transitional\EN" "http:\www.w3.org\TR\html4\loose.dtd"><html><head><meta http-equiv="content-type" content="text\html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=0.95, maximum-scale=0.95, user-scalable=no" \><!--                                           --><!-- Any title is fine                         --><!--                                           --><title>Site Maintenance<\title><style>  body { text-align: center; padding: 15px; }  h1 { font-size: 50px; }  body { font: 20px Helvetica, sans-serif; color: 
+java.nio.file.InvalidPathException: Illegal char <<> at index 50: D:\Projects\ionoff\ionoff.player\dist\release\imp\<!DOCTYPE html PUBLIC "-\W3C\DTD HTML 4.01 Transitional\EN" "http:\www.w3.org\TR\html4\loose.dtd"><html><head><meta http-equiv="content-type" content="text\html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=0.95, maximum-scale=0.95, user-scalable=no" \><!--                                           --><!-- Any title is fine                         --><!--                                           --><title>Site Maintenance<\title><style>  body { text-align: center; padding: 15px; }  h1 { font-size: 50px; }  body { font: 20px Helvetica, sans-serif; color: 
+	at sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:182)
+	at sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:153)
+	at sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
+	at sun.nio.fs.WindowsPath.parse(WindowsPath.java:94)
+	at sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:255)
+	at java.io.File.toPath(File.java:2234)
+	at net.ionoff.player.thread.LatestVersionDownloader.dowloadLatestVersion(LatestVersionDownloader.java:65)
+	at net.ionoff.player.thread.LatestVersionDownloader.run(LatestVersionDownloader.java:29)
+2017-02-07 23:01:28 ERROR IntervalSendStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.sendStatusToCenter(IntervalSendStatusThread.java:36)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.run(IntervalSendStatusThread.java:27)
+2017-02-07 23:03:08 INFO  LatestVersionDownloader:58 - Downloading new version: <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=0.95, maximum-scale=0.95, user-scalable=no" /><!--                                           --><!-- Any title is fine                         --><!--                                           --><title>Site Maintenance</title><style>  body { text-align: center; padding: 15px; }  h1 { font-size: 50px; }  body { font: 20px Helvetica, sans-serif; color: #333; }  article { display: block; text-align: left; width: 650px; margin: 0 auto; }  a { color: #dc8100; text-decoration: none; }  a:hover { color: #333; text-decoration: none; }</style><article><h1 style="width: 250px;    height: 80px;    background-image: url(logo.png);    background-size: 240px 80px;    background-position: -5px 0px;    background-repeat: no-repeat;">    <h2>We&rsquo;ll be back soon!</h2>    <div>        <p>Sorry for the inconvenience but we&rsquo;re performing some maintenance at the moment. We&rsquo;ll be back online shortly!</p>        <p>&mdash; IOnOff Technology</p>    </div></article></html>
+2017-02-07 23:03:08 ERROR LatestVersionDownloader:32 - Illegal char <<> at index 50: D:\Projects\ionoff\ionoff.player\dist\release\imp\<!DOCTYPE html PUBLIC "-\W3C\DTD HTML 4.01 Transitional\EN" "http:\www.w3.org\TR\html4\loose.dtd"><html><head><meta http-equiv="content-type" content="text\html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=0.95, maximum-scale=0.95, user-scalable=no" \><!--                                           --><!-- Any title is fine                         --><!--                                           --><title>Site Maintenance<\title><style>  body { text-align: center; padding: 15px; }  h1 { font-size: 50px; }  body { font: 20px Helvetica, sans-serif; color: 
+java.nio.file.InvalidPathException: Illegal char <<> at index 50: D:\Projects\ionoff\ionoff.player\dist\release\imp\<!DOCTYPE html PUBLIC "-\W3C\DTD HTML 4.01 Transitional\EN" "http:\www.w3.org\TR\html4\loose.dtd"><html><head><meta http-equiv="content-type" content="text\html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=0.95, maximum-scale=0.95, user-scalable=no" \><!--                                           --><!-- Any title is fine                         --><!--                                           --><title>Site Maintenance<\title><style>  body { text-align: center; padding: 15px; }  h1 { font-size: 50px; }  body { font: 20px Helvetica, sans-serif; color: 
+	at sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:182)
+	at sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:153)
+	at sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
+	at sun.nio.fs.WindowsPath.parse(WindowsPath.java:94)
+	at sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:255)
+	at java.io.File.toPath(File.java:2234)
+	at net.ionoff.player.thread.LatestVersionDownloader.dowloadLatestVersion(LatestVersionDownloader.java:65)
+	at net.ionoff.player.thread.LatestVersionDownloader.run(LatestVersionDownloader.java:29)
+2017-02-07 23:03:59 ERROR IntervalSendStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.sendStatusToCenter(IntervalSendStatusThread.java:36)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.run(IntervalSendStatusThread.java:27)
+2017-02-07 23:08:54 INFO  LatestVersionDownloader:45 - Current version is the latest version
+2017-02-07 23:09:45 ERROR IntervalSendStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.sendStatusToCenter(IntervalSendStatusThread.java:36)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.run(IntervalSendStatusThread.java:27)
+2017-02-07 23:10:36 ERROR IntervalSendStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.sendStatusToCenter(IntervalSendStatusThread.java:36)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.run(IntervalSendStatusThread.java:27)
+2017-02-07 23:11:27 ERROR IntervalSendStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.sendStatusToCenter(IntervalSendStatusThread.java:36)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.run(IntervalSendStatusThread.java:27)
+2017-02-07 23:12:18 ERROR IntervalSendStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.sendStatusToCenter(IntervalSendStatusThread.java:36)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.run(IntervalSendStatusThread.java:27)
+2017-02-07 23:13:09 ERROR IntervalSendStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.sendStatusToCenter(IntervalSendStatusThread.java:36)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.run(IntervalSendStatusThread.java:27)
+2017-02-07 23:14:00 ERROR IntervalSendStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.sendStatusToCenter(IntervalSendStatusThread.java:36)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.run(IntervalSendStatusThread.java:27)
+2017-02-07 23:14:51 ERROR IntervalSendStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.sendStatusToCenter(IntervalSendStatusThread.java:36)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.run(IntervalSendStatusThread.java:27)
+2017-02-07 23:15:42 ERROR IntervalSendStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.sendStatusToCenter(IntervalSendStatusThread.java:36)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.run(IntervalSendStatusThread.java:27)
+2017-02-07 23:16:33 ERROR IntervalSendStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.sendStatusToCenter(IntervalSendStatusThread.java:36)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.run(IntervalSendStatusThread.java:27)
+2017-02-07 23:17:24 ERROR IntervalSendStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.sendStatusToCenter(IntervalSendStatusThread.java:36)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.run(IntervalSendStatusThread.java:27)
+2017-02-07 23:18:15 ERROR IntervalSendStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.sendStatusToCenter(IntervalSendStatusThread.java:36)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.run(IntervalSendStatusThread.java:27)
+2017-02-07 23:19:06 ERROR IntervalSendStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.sendStatusToCenter(IntervalSendStatusThread.java:36)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.run(IntervalSendStatusThread.java:27)
+2017-02-07 23:19:34 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:19:34 INFO  LatestVersionDownloader:45 - Current version is the latest version
+2017-02-07 23:19:45 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:19:45 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:19:56 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:19:56 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:19:57 ERROR IntervalSendStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.sendStatusToCenter(IntervalSendStatusThread.java:36)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.run(IntervalSendStatusThread.java:27)
+2017-02-07 23:20:07 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:20:07 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:20:18 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:20:18 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:20:25 ERROR InformStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.ionoff.player.thread.InformStatusThread.sendStatusToCenter(InformStatusThread.java:36)
+	at net.ionoff.player.thread.InformStatusThread.run(InformStatusThread.java:27)
+2017-02-07 23:20:29 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:20:29 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:20:40 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:20:40 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:20:48 ERROR IntervalSendStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.sendStatusToCenter(IntervalSendStatusThread.java:36)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.run(IntervalSendStatusThread.java:27)
+2017-02-07 23:20:51 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:20:51 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:21:02 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:21:02 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:21:13 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:21:13 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:21:16 ERROR InformStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.ionoff.player.thread.InformStatusThread.sendStatusToCenter(InformStatusThread.java:36)
+	at net.ionoff.player.thread.InformStatusThread.run(InformStatusThread.java:27)
+2017-02-07 23:21:24 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:21:24 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:21:35 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:21:35 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:21:39 ERROR IntervalSendStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.sendStatusToCenter(IntervalSendStatusThread.java:36)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.run(IntervalSendStatusThread.java:27)
+2017-02-07 23:21:46 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:21:46 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:21:57 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:21:57 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:22:07 ERROR InformStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.ionoff.player.thread.InformStatusThread.sendStatusToCenter(InformStatusThread.java:36)
+	at net.ionoff.player.thread.InformStatusThread.run(InformStatusThread.java:27)
+2017-02-07 23:22:08 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:22:08 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:22:19 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:22:19 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:22:30 ERROR IntervalSendStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.sendStatusToCenter(IntervalSendStatusThread.java:36)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.run(IntervalSendStatusThread.java:27)
+2017-02-07 23:22:30 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:22:30 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:22:41 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:22:41 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:22:52 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:22:52 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:22:58 ERROR InformStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.ionoff.player.thread.InformStatusThread.sendStatusToCenter(InformStatusThread.java:36)
+	at net.ionoff.player.thread.InformStatusThread.run(InformStatusThread.java:27)
+2017-02-07 23:23:03 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:23:03 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:23:14 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:23:14 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:23:21 ERROR IntervalSendStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.sendStatusToCenter(IntervalSendStatusThread.java:36)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.run(IntervalSendStatusThread.java:27)
+2017-02-07 23:23:25 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:23:25 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:23:36 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:23:36 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:23:47 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:23:47 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:23:49 ERROR InformStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.ionoff.player.thread.InformStatusThread.sendStatusToCenter(InformStatusThread.java:36)
+	at net.ionoff.player.thread.InformStatusThread.run(InformStatusThread.java:27)
+2017-02-07 23:23:58 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:23:58 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:24:09 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:24:09 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:24:12 ERROR IntervalSendStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.sendStatusToCenter(IntervalSendStatusThread.java:36)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.run(IntervalSendStatusThread.java:27)
+2017-02-07 23:24:20 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:24:20 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:24:31 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:24:31 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:24:40 ERROR InformStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.ionoff.player.thread.InformStatusThread.sendStatusToCenter(InformStatusThread.java:36)
+	at net.ionoff.player.thread.InformStatusThread.run(InformStatusThread.java:27)
+2017-02-07 23:24:42 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:24:42 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:24:53 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:24:53 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:25:03 ERROR IntervalSendStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.sendStatusToCenter(IntervalSendStatusThread.java:36)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.run(IntervalSendStatusThread.java:27)
+2017-02-07 23:25:04 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:25:04 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:25:15 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:25:15 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:25:26 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:25:26 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:25:31 ERROR InformStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.ionoff.player.thread.InformStatusThread.sendStatusToCenter(InformStatusThread.java:36)
+	at net.ionoff.player.thread.InformStatusThread.run(InformStatusThread.java:27)
+2017-02-07 23:25:37 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:25:37 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:25:48 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:25:48 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:25:54 ERROR IntervalSendStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.sendStatusToCenter(IntervalSendStatusThread.java:36)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.run(IntervalSendStatusThread.java:27)
+2017-02-07 23:25:59 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:25:59 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:26:10 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:26:10 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:26:21 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:26:21 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:26:22 ERROR InformStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.ionoff.player.thread.InformStatusThread.sendStatusToCenter(InformStatusThread.java:36)
+	at net.ionoff.player.thread.InformStatusThread.run(InformStatusThread.java:27)
+2017-02-07 23:26:32 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:26:32 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:26:43 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:26:43 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:26:45 ERROR IntervalSendStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.sendStatusToCenter(IntervalSendStatusThread.java:36)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.run(IntervalSendStatusThread.java:27)
+2017-02-07 23:26:54 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:26:54 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:27:05 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:27:05 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:27:13 ERROR InformStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.ionoff.player.thread.InformStatusThread.sendStatusToCenter(InformStatusThread.java:36)
+	at net.ionoff.player.thread.InformStatusThread.run(InformStatusThread.java:27)
+2017-02-07 23:27:16 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:27:16 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:27:27 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:27:27 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:27:36 ERROR IntervalSendStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.sendStatusToCenter(IntervalSendStatusThread.java:36)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.run(IntervalSendStatusThread.java:27)
+2017-02-07 23:27:38 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:27:38 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:27:49 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:27:49 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:28:00 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:28:00 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:28:04 ERROR InformStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.ionoff.player.thread.InformStatusThread.sendStatusToCenter(InformStatusThread.java:36)
+	at net.ionoff.player.thread.InformStatusThread.run(InformStatusThread.java:27)
+2017-02-07 23:28:11 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:28:11 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:28:22 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:28:22 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:28:27 ERROR IntervalSendStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.sendStatusToCenter(IntervalSendStatusThread.java:36)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.run(IntervalSendStatusThread.java:27)
+2017-02-07 23:28:33 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:28:33 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:28:44 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:28:44 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:28:55 ERROR InformStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.ionoff.player.thread.InformStatusThread.sendStatusToCenter(InformStatusThread.java:36)
+	at net.ionoff.player.thread.InformStatusThread.run(InformStatusThread.java:27)
+2017-02-07 23:28:55 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:28:55 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:29:06 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:29:06 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:29:17 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:29:17 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:29:18 ERROR IntervalSendStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.sendStatusToCenter(IntervalSendStatusThread.java:36)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.run(IntervalSendStatusThread.java:27)
+2017-02-07 23:29:28 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:29:28 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:29:39 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:29:39 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:29:46 ERROR InformStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.ionoff.player.thread.InformStatusThread.sendStatusToCenter(InformStatusThread.java:36)
+	at net.ionoff.player.thread.InformStatusThread.run(InformStatusThread.java:27)
+2017-02-07 23:29:50 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:29:50 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:30:01 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:30:01 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:30:09 ERROR IntervalSendStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.sendStatusToCenter(IntervalSendStatusThread.java:36)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.run(IntervalSendStatusThread.java:27)
+2017-02-07 23:30:12 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:30:12 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:30:23 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:30:23 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:30:34 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:30:34 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:30:37 ERROR InformStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.ionoff.player.thread.InformStatusThread.sendStatusToCenter(InformStatusThread.java:36)
+	at net.ionoff.player.thread.InformStatusThread.run(InformStatusThread.java:27)
+2017-02-07 23:30:45 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:30:45 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:30:56 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:30:56 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:31:00 ERROR IntervalSendStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.sendStatusToCenter(IntervalSendStatusThread.java:36)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.run(IntervalSendStatusThread.java:27)
+2017-02-07 23:31:07 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:31:07 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:31:18 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:31:18 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:31:28 ERROR InformStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.ionoff.player.thread.InformStatusThread.sendStatusToCenter(InformStatusThread.java:36)
+	at net.ionoff.player.thread.InformStatusThread.run(InformStatusThread.java:27)
+2017-02-07 23:31:29 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:31:29 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:31:40 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:31:40 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:31:51 ERROR IntervalSendStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.sendStatusToCenter(IntervalSendStatusThread.java:36)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.run(IntervalSendStatusThread.java:27)
+2017-02-07 23:31:51 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:31:51 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:32:02 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:32:02 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:32:13 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:32:13 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:32:19 ERROR InformStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.ionoff.player.thread.InformStatusThread.sendStatusToCenter(InformStatusThread.java:36)
+	at net.ionoff.player.thread.InformStatusThread.run(InformStatusThread.java:27)
+2017-02-07 23:32:24 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:32:24 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:32:35 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:32:35 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:32:42 ERROR IntervalSendStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.sendStatusToCenter(IntervalSendStatusThread.java:36)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.run(IntervalSendStatusThread.java:27)
+2017-02-07 23:32:46 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:32:46 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:32:57 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:32:57 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:33:08 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:33:08 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:33:10 ERROR InformStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.ionoff.player.thread.InformStatusThread.sendStatusToCenter(InformStatusThread.java:36)
+	at net.ionoff.player.thread.InformStatusThread.run(InformStatusThread.java:27)
+2017-02-07 23:33:19 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:33:19 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:33:30 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:33:30 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:33:33 ERROR IntervalSendStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.sendStatusToCenter(IntervalSendStatusThread.java:36)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.run(IntervalSendStatusThread.java:27)
+2017-02-07 23:33:41 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:33:41 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:33:52 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:33:52 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:34:01 ERROR InformStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.ionoff.player.thread.InformStatusThread.sendStatusToCenter(InformStatusThread.java:36)
+	at net.ionoff.player.thread.InformStatusThread.run(InformStatusThread.java:27)
+2017-02-07 23:34:03 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:34:03 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:34:14 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:34:14 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:34:24 ERROR IntervalSendStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.sendStatusToCenter(IntervalSendStatusThread.java:36)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.run(IntervalSendStatusThread.java:27)
+2017-02-07 23:34:25 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:34:25 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:34:36 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:34:36 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:34:47 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:34:47 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:34:52 ERROR InformStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.ionoff.player.thread.InformStatusThread.sendStatusToCenter(InformStatusThread.java:36)
+	at net.ionoff.player.thread.InformStatusThread.run(InformStatusThread.java:27)
+2017-02-07 23:34:58 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:34:58 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:35:09 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:35:09 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:35:15 ERROR IntervalSendStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.sendStatusToCenter(IntervalSendStatusThread.java:36)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.run(IntervalSendStatusThread.java:27)
+2017-02-07 23:35:20 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:35:20 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:35:31 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:35:31 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:35:42 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:35:42 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:35:43 ERROR InformStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.ionoff.player.thread.InformStatusThread.sendStatusToCenter(InformStatusThread.java:36)
+	at net.ionoff.player.thread.InformStatusThread.run(InformStatusThread.java:27)
+2017-02-07 23:35:53 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:35:53 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:36:04 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:36:04 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:36:06 ERROR IntervalSendStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.sendStatusToCenter(IntervalSendStatusThread.java:36)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.run(IntervalSendStatusThread.java:27)
+2017-02-07 23:36:15 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:36:15 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:36:26 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:36:26 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:36:34 ERROR InformStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.ionoff.player.thread.InformStatusThread.sendStatusToCenter(InformStatusThread.java:36)
+	at net.ionoff.player.thread.InformStatusThread.run(InformStatusThread.java:27)
+2017-02-07 23:36:37 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:36:37 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:36:48 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:36:48 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:36:57 ERROR IntervalSendStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.sendStatusToCenter(IntervalSendStatusThread.java:36)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.run(IntervalSendStatusThread.java:27)
+2017-02-07 23:36:59 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:36:59 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:37:10 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:37:10 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:37:21 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:37:21 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:37:25 ERROR InformStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.ionoff.player.thread.InformStatusThread.sendStatusToCenter(InformStatusThread.java:36)
+	at net.ionoff.player.thread.InformStatusThread.run(InformStatusThread.java:27)
+2017-02-07 23:37:32 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:37:32 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:37:43 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:37:43 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:37:48 ERROR IntervalSendStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.sendStatusToCenter(IntervalSendStatusThread.java:36)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.run(IntervalSendStatusThread.java:27)
+2017-02-07 23:37:54 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:37:54 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:38:05 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:38:05 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:38:16 ERROR InformStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.ionoff.player.thread.InformStatusThread.sendStatusToCenter(InformStatusThread.java:36)
+	at net.ionoff.player.thread.InformStatusThread.run(InformStatusThread.java:27)
+2017-02-07 23:38:16 ERROR TcpConnection:122 - java.net.ConnectException: Connection refused: connect
+2017-02-07 23:38:16 INFO  TcpConnection:145 - Status: Connecting...
+2017-02-07 23:38:39 ERROR IntervalSendStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.sendStatusToCenter(IntervalSendStatusThread.java:36)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.run(IntervalSendStatusThread.java:27)
+2017-02-07 23:39:30 ERROR IntervalSendStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.sendStatusToCenter(IntervalSendStatusThread.java:36)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.run(IntervalSendStatusThread.java:27)
+2017-02-07 23:40:21 ERROR IntervalSendStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.sendStatusToCenter(IntervalSendStatusThread.java:36)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.run(IntervalSendStatusThread.java:27)
+2017-02-07 23:41:12 ERROR IntervalSendStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.sendStatusToCenter(IntervalSendStatusThread.java:36)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.run(IntervalSendStatusThread.java:27)
+2017-02-07 23:42:03 ERROR IntervalSendStatusThread:30 - Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.sendStatusToCenter(IntervalSendStatusThread.java:36)
+	at net.xapxinh.player.schedule.IntervalSendStatusThread.run(IntervalSendStatusThread.java:27)
