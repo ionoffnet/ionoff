@@ -187,7 +187,7 @@ public class DeamonPlayer {
 		addPlaylistNode(newNode);
 		List<MPDSong> newSongs = new ArrayList<>();
 		for (Song song : album.getSongs()) {
-			MPDSong mpdSong = new MPDSong(song.getUri(), song.getName());
+			MPDSong mpdSong = new MPDSong(song.getUrl(), song.getName());
 			newSongs.add(mpdSong);
 		}
 		mpd.getPlaylist().addSongs(newSongs);
@@ -226,14 +226,14 @@ public class DeamonPlayer {
 		return node;
 	}
 
-	private PlayLeaf createLeaf(Song albumItem) {
+	private PlayLeaf createLeaf(Song song) {
 		PlayLeaf leaf = new PlayLeaf();
-		leaf.setName(albumItem.getTitle());
+		leaf.setName(song.getTitle());
 		leaf.setType(PlayLeaf.TYPE.file.toString());
-		leaf.setImage(albumItem.getImage());
-		leaf.setUrl(albumItem.getUri());
-		leaf.setArtists(albumItem.getArtists());
-		leaf.setAuthor(albumItem.getAuthor());
+		leaf.setImage(song.getImage());
+		leaf.setMrl(song.getUrl());
+		leaf.setArtists(song.getArtists());
+		leaf.setAuthor(song.getAuthor());
 		return leaf;
 	}
 
@@ -267,7 +267,7 @@ public class DeamonPlayer {
 	private PlayLeaf createLeaf(String file) {
 		PlayLeaf leaf = new PlayLeaf();
 		leaf.setName(file);
-		leaf.setUrl(file);
+		leaf.setMrl(file);
 		leaf.setType(PlayLeaf.TYPE.file.toString());
 		return leaf;
 	}
@@ -339,7 +339,8 @@ public class DeamonPlayer {
 		PlayLeaf leaf = new PlayLeaf();
 		leaf.setName(youtubeVideo.getTitle());
 		leaf.setType(PlayLeaf.TYPE.youtube.toString());
-		leaf.setUrl(youtubeVideo.getUri());
+		leaf.setUrl(youtubeVideo.getId());
+		leaf.setMrl(youtubeVideo.getMrl());
 		leafs.add(leaf);
 		node.setLeafs(leafs);
 		return node;

@@ -59,7 +59,7 @@ public class Song {
 	public void setArtists(String artists) {
 		this.artists = artists;
 	}
-	public String getUri() {
+	public String getUrl() {
 		return new StringBuilder().append(folderUrl).append('/').append(name).toString();
 	}
 	public String getImage() {
