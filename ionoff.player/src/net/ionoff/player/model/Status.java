@@ -16,7 +16,7 @@ public class Status {
 	private String version;
 	private float position;
 	private boolean repeat;
-	private PlaylistNode playlistNode;
+	private PlayNode playlistNode;
 	
 	public boolean getFullscreen() {
 		return fullscreen;
@@ -114,19 +114,19 @@ public class Status {
 		this.repeat = repeat;
 	}
 
-	public PlaylistNode getPlaylistNode() {
+	public PlayNode getPlaylistNode() {
 		return playlistNode;
 	}
 
-	public void setPlaylistNode(PlaylistNode playlistNode) {
-		PlaylistNode node = null;
+	public void setPlaylistNode(PlayNode playlistNode) {
+		PlayNode node = null;
 		if (playlistNode != null) {
-			node = new PlaylistNode();
+			node = new PlayNode();
 			node.setType(playlistNode.getType());
 			node.setName(playlistNode.getName());
 			node.setImage(playlistNode.getImage());
-			node.setLeafs(new ArrayList<PlaylistLeaf>());
-			for (PlaylistLeaf leaf : playlistNode.getLeafs()) {
+			node.setLeafs(new ArrayList<PlayLeaf>());
+			for (PlayLeaf leaf : playlistNode.getLeafs()) {
 				if (leaf.isCurrent()) {
 					node.getLeafs().add(leaf);
 					break;

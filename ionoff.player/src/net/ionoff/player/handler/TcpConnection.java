@@ -12,7 +12,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import net.ionoff.player.AppProperties;
-import net.ionoff.player.config.AppConfig;
 import net.ionoff.player.config.UserConfig;
 import net.ionoff.player.exception.PlayerException;
 

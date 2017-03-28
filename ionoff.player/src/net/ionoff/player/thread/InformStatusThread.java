@@ -10,7 +10,6 @@ import java.net.UnknownHostException;
 import org.apache.log4j.Logger;
 import org.json.JSONObject;
 
-import net.ionoff.player.config.AppConfig;
 import net.ionoff.player.config.UserConfig;
 
 public class InformStatusThread extends Thread {
@@ -19,7 +18,7 @@ public class InformStatusThread extends Thread {
 	
 	private static InformStatusThread instance;
 	
-	@Override
+	@Override 
 	public void run() {
 		for (; true; ) {
 			try {

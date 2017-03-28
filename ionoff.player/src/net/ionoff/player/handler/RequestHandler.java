@@ -18,8 +18,9 @@ import net.ionoff.player.exception.UnknownCommandException;
 import net.ionoff.player.exception.UnknownContextException;
 import net.ionoff.player.model.Album;
 import net.ionoff.player.model.MediaFile;
-import net.ionoff.player.model.Playlist;
-import net.ionoff.player.model.PlaylistNode;
+import net.ionoff.player.model.PlayLeaf;
+import net.ionoff.player.model.PlayList;
+import net.ionoff.player.model.PlayNode;
 import net.ionoff.player.model.Schedule;
 import net.ionoff.player.model.Status;
 import net.ionoff.player.model.YoutubeVideo;
@@ -81,7 +82,11 @@ public class RequestHandler {
 	}
 
 	private String handlePlaylistRequest(final Map<String, String> params) throws Exception {
-		Playlist playlist = getPlayer().getPlaylist();
+		String command = params.get("command");
+		if (!params.isEmpty() && "pl_update".equals(command)) {
+			updatePlaylist(params);
+		}
+		PlayList playlist = getPlayer().getPlaylist();
 		return new PlayerResponse("playlist", playlist).toJSONString();
 	}
 
@@ -205,7 +210,7 @@ public class RequestHandler {
 	}
 
 	private void volume(Map<String, String> parameters) throws MpdConnectException {
-		String val = (String) parameters.get("val");
+		String val = parameters.get("val");
 		if (val.equals("mute")) {
 			getPlayer().mute();
 		} else if (val.equals("+")) {
@@ -233,6 +238,8 @@ public class RequestHandler {
 
 	private void pl_empty(Map<String, String> parameters) throws MpdConnectException {
 		getPlayer().emtyPlaylist();
+		getPlayer().getPlaylist().setId(0L);
+		getPlayer().getPlaylist().setName(null);
 	}
 
 	private void pl_stop(Map<String, String> parameters) throws MpdConnectException {
@@ -256,7 +263,7 @@ public class RequestHandler {
 	}
 
 	private void seek(Map<String, String> parameters) throws MpdConnectException {
-		String val = (String) parameters.get("val");
+		String val = parameters.get("val");
 		if (val.equals("+")) {
 			getPlayer().seekFw();
 		} else if (val.equals("-")) {
@@ -265,8 +272,8 @@ public class RequestHandler {
 	}
 
 	private void pl_delete(Map<String, String> parameters) throws NumberFormatException, MpdConnectException {
-		String id = (String) parameters.get("id");
-		String type = (String) parameters.get("type");
+		String id = parameters.get("id");
+		String type = parameters.get("type");
 		if ("leaf".equals(type)) {
 			getPlayer().deleteLeaf(Long.parseLong(id));
 		} else if ("node".equals(type)) {
@@ -284,8 +291,8 @@ public class RequestHandler {
 
 	private void in_enqueue(Map<String, String> parameters, boolean isPlay) throws MpdConnectException {
 		String input = parameters.get("input");
-		String inputType = (String) parameters.get("input_type");
-		if (PlaylistNode.TYPE.album.toString().equals(inputType)) {
+		String inputType = parameters.get("input_type");
+		if (PlayNode.TYPE.album.toString().equals(inputType)) {
 			Album album = gson.fromJson(input, Album.class);
 			addAlbumFile(album);
 			getPlayer().inEnqueue(album, isPlay);
@@ -299,6 +306,11 @@ public class RequestHandler {
 			YoutubeVideo video = gson.fromJson(input, YoutubeVideo.class);
 			getPlayer().inEnqueue(video, isPlay);
 		}
+		else if ("playlist".equals(inputType)) {
+			PlayList playlist = gson.fromJson(input, PlayList.class);
+			getPlayer().inEnqueue(playlist, isPlay);
+		}
+		
 	}
 
 	private void in_play(Map<String, String> parameters) throws MpdConnectException {
@@ -336,8 +348,8 @@ public class RequestHandler {
 
 
 	private void pl_play(Map<String, String> parameters) throws MpdConnectException {
-		String id = (String) parameters.get("id");
-		String type = (String) parameters.get("type");
+		String id = parameters.get("id");
+		String type = parameters.get("type");
 		if ("leaf".equals(type)) {
 			getPlayer().playPlaylistLeaf(Long.parseLong(id));
 		} else if ("node".equals(type)) {
@@ -346,4 +358,30 @@ public class RequestHandler {
 			getPlayer().playPlaylist();
 		}
 	}
+	
+	private void updatePlaylist(Map<String, String> params) throws MpdConnectException {
+ 		String plJson = params.get("playlist");
+ 		PlayList playlist = gson.fromJson(plJson, PlayList.class);
+		PlayList playingList = getPlayer().getPlaylist();
+		playingList.setId(playlist.getId());
+		playingList.setName(playlist.getName());
+		for (PlayNode node : playlist.getNodes()) {
+			for (PlayNode playingNode : playingList.getNodes()) {
+				if (playingNode.getIdx() == node.getIdx()) {
+					updatePlayNode(playingNode, node);
+				}
+			}
+		}
+	}
+
+	private void updatePlayNode(PlayNode playingNode, PlayNode node) {
+		playingNode.setId(node.getId());
+		for (PlayLeaf leaf : node.getLeafs()) {
+			for (PlayLeaf playingLeaf : playingNode.getLeafs()) {
+				if (playingLeaf.getIdx() == leaf.getIdx()) {
+					playingLeaf.setId(leaf.getId());
+				}
+			}
+		}
+ 	}
 }

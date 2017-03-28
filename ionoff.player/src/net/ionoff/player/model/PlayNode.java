@@ -5,18 +5,19 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-public class PlaylistNode {
+public class PlayNode {
 	
 	public enum TYPE {
 		album, dir, youtube;
 	}
 	
 	private long id;
+	private long idx;
 	private String name;
 	private String type;
 	private String image;
 	
-	private List<PlaylistLeaf> leafs;
+	private List<PlayLeaf> leafs;
 
 	public String getName() {
 		return name;
@@ -32,6 +33,14 @@ public class PlaylistNode {
 
 	public void setId(long id) {
 		this.id = id;
+	}
+
+	public long getIdx() {
+		return idx;
+	}
+
+	public void setIdx(long idx) {
+		this.idx = idx;
 	}
 
 	public String getType() {
@@ -50,14 +59,14 @@ public class PlaylistNode {
 		this.image = image;
 	}
 
-	public List<PlaylistLeaf> getLeafs() {
+	public List<PlayLeaf> getLeafs() {
 		if (leafs == null) {
 			return Collections.emptyList();
 		}
 		return leafs;
 	}
 
-	public void setLeafs(List<PlaylistLeaf> playlistLeafs) {
+	public void setLeafs(List<PlayLeaf> playlistLeafs) {
 		this.leafs = playlistLeafs;
 	}
 
@@ -65,7 +74,7 @@ public class PlaylistNode {
 		return leafs != null && !leafs.isEmpty();
 	}
 
-	public boolean containsLeaf(PlaylistLeaf leaf) {
+	public boolean containsLeaf(PlayLeaf leaf) {
 		if (!hasLeaf()) {
 			return false;
 		}
@@ -76,7 +85,7 @@ public class PlaylistNode {
 		if (!hasLeaf()) {
 			return false;
 		}
-		for (PlaylistLeaf leaf : leafs) {
+		for (PlayLeaf leaf : leafs) {
 			if (leaf.isCurrent()) {
 				return true;
 			}
@@ -84,25 +93,25 @@ public class PlaylistNode {
 		return false;
 	}
 
-	public List<PlaylistLeaf> getUnPlayedLeafs() {
+	public List<PlayLeaf> getNotPlayedLeafs() {
 		if (!hasLeaf()) {
 			return Collections.emptyList();
 		}
-		List<PlaylistLeaf> unPlayedLeafs = new ArrayList<PlaylistLeaf>();
-		for (PlaylistLeaf leaf : leafs) {
+		List<PlayLeaf> notPlayedLeafs = new ArrayList<PlayLeaf>();
+		for (PlayLeaf leaf : leafs) {
 			if (!leaf.isPlayed()) {
-				unPlayedLeafs.add(leaf);
+				notPlayedLeafs.add(leaf);
 			}
 		}
-		return unPlayedLeafs;
+		return notPlayedLeafs;
 	}
 
-	public Collection<? extends PlaylistLeaf> getPlayedLeafs() {
+	public Collection<? extends PlayLeaf> getPlayedLeafs() {
 		if (!hasLeaf()) {
 			return Collections.emptyList();
 		}
-		List<PlaylistLeaf> playedLeafs = new ArrayList<PlaylistLeaf>();
-		for (PlaylistLeaf leaf : leafs) {
+		List<PlayLeaf> playedLeafs = new ArrayList<PlayLeaf>();
+		for (PlayLeaf leaf : leafs) {
 			if (leaf.isPlayed()) {
 				playedLeafs.add(leaf);
 			}

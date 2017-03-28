@@ -1,6 +1,6 @@
 package net.ionoff.player.model;
 
-public class PlaylistLeaf {
+public class PlayLeaf {
 	
 	private static final String CURRENT = "current";
 
@@ -9,18 +9,19 @@ public class PlaylistLeaf {
 	}
 	
 	private long id;
+	private long idx;
 	private String name;
 	private String type;
 	private String image;
 	private String duration;
-	private String uri;
+	private String url;
 	private String current;
 	private boolean played;
 	private String author;
 	private String artists;
 	private String mrl;
 	
-	public PlaylistLeaf() {
+	public PlayLeaf() {
 		played = false;
 	}
 
@@ -48,6 +49,14 @@ public class PlaylistLeaf {
 		this.id = id;
 	}
 
+	public long getIdx() {
+		return idx;
+	}
+
+	public void setIdx(long idx) {
+		this.idx = idx;
+	}
+
 	public String getDuration() {
 		return duration;
 	}
@@ -56,12 +65,12 @@ public class PlaylistLeaf {
 		this.duration = duration;
 	}
 
-	public String getUri() {
-		return uri;
+	public String getUrl() {
+		return url;
 	}
 
-	public void setUri(String uri) {
-		this.uri = uri;
+	public void setUrl(String url) {
+		this.url = url;
 	}
 
 	public String getCurrent() {
