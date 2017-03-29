@@ -83,7 +83,7 @@ public class DeamonPlayer {
 		status.setFullscreen(false);
 		status.setRandom(mpd.getPlayer().isRandom());
 		status.setRepeat(mpd.getPlayer().isRepeat());
-		status.setLoop(true);
+		status.setLoop(false);
 
 		MPDSong currentSong = mpd.getPlayer().getCurrentSong();
 		if (currentSong == null) {
@@ -354,7 +354,9 @@ public class DeamonPlayer {
 		if (mpd.getPlayer().isRepeat()) {
 			mpd.getPlayer().setRepeat(false);
 		}
-		mpd.getPlayer().setRepeat(true);
+		else {
+			mpd.getPlayer().setRepeat(true);
+		}
 	}
 
 	public void seekFw() {
@@ -398,7 +400,12 @@ public class DeamonPlayer {
 	}
 
 	public void randomizePlay() {
-		mpd.getPlayer().randomizePlay();
+		if (mpd.getPlayer().isRandom()) {
+			mpd.getPlayer().unRandomizePlay();
+		}
+		else {
+			mpd.getPlayer().randomizePlay();
+		}
 	}
 
 	public void playPrevious() {
