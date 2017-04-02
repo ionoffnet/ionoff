@@ -343,7 +343,7 @@ public class RequestHandler {
 	}
 
 	private String getAlbumFileName(Album album) {
-		return album.getTitle() + "#" + album.getId() + ".album";
+		return AccentRemover.removeAccent(album.getTitle()) + "#" + album.getId() + ".album";
 	}
 
 
