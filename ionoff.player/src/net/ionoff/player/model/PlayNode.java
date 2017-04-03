@@ -10,6 +10,8 @@ public class PlayNode {
 	public enum TYPE {
 		album, dir, youtube;
 	}
+
+	public static final long DEFAULT_ID = 0;
 	
 	private long id;
 	private long idx;
@@ -61,7 +63,7 @@ public class PlayNode {
 
 	public List<PlayLeaf> getLeafs() {
 		if (leafs == null) {
-			return Collections.emptyList();
+			leafs = new ArrayList<>();
 		}
 		return leafs;
 	}

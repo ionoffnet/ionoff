@@ -22,17 +22,22 @@ import net.ionoff.player.model.PlayLeaf;
 import net.ionoff.player.model.PlayList;
 import net.ionoff.player.model.PlayNode;
 import net.ionoff.player.model.Schedule;
+import net.ionoff.player.model.Song;
 import net.ionoff.player.model.Status;
 import net.ionoff.player.model.YoutubeVideo;
 
 public class RequestHandler {
 	private static final Logger LOGGER = Logger.getLogger(RequestHandler.class.getName());
 
+	public static final String PLAYLEAF = "playleaf";
+	public static final String PLAYNODE = "playnode";
+	public static final String PLAYLIST = "playlist";
+	
 	protected static final String COMMAND = "command";
-	private static final String STATUS = "/status";
-	private static final String PLAYLIST = "/playlist";
-	private static final String BROWSE = "/browse";
-	private static final String SCHEDULE = "/schedule";
+	private static final String CONTEXT_STATUS = "/status";
+	private static final String CONTEXT_PLAYLIST = "/playlist";
+	private static final String CONTEXT_BROWSE = "/browse";
+	private static final String CONTEXT_SCHEDULE = "/schedule";
 
 	private final Map<String, String> params;
 
@@ -53,16 +58,16 @@ public class RequestHandler {
 		final String context = params.get(RequestContext.CONTEXT);
 		params.remove(RequestContext.CONTEXT);
 
-		if (context.equals(RequestContext.REQUESTS + STATUS)) {
+		if (context.equals(RequestContext.REQUESTS + CONTEXT_STATUS)) {
 			return handleStatusRequest(params);
 		}
-		if (context.equals(RequestContext.REQUESTS + PLAYLIST)) {
+		if (context.equals(RequestContext.REQUESTS + CONTEXT_PLAYLIST)) {
 			return handlePlaylistRequest(params);
 		}
-		if (context.equals(RequestContext.REQUESTS + BROWSE)) {
+		if (context.equals(RequestContext.REQUESTS + CONTEXT_BROWSE)) {
 			return handleBrowseRequest(params);
 		}
-		if (context.equals(RequestContext.REQUESTS + SCHEDULE)) {
+		if (context.equals(RequestContext.REQUESTS + CONTEXT_SCHEDULE)) {
 			return handleScheduleRequest(params);
 		}
 		throw new UnknownContextException(context);
@@ -110,7 +115,7 @@ public class RequestHandler {
 			MediaFile mFile = new MediaFile();
 			mFile.setName(".albums");
 			mFile.setPath(".albums");
-			mFile.setType("dir");
+			mFile.setType(MediaFile.TYPE.dir.toString());
 			mediaFiles.add(mFile);
 			mediaFiles.addAll(getPlayer().browseFiles(dir));
 			return mediaFiles;
@@ -125,7 +130,7 @@ public class RequestHandler {
 			MediaFile parent = new MediaFile();
 			parent.setName("..");
 			parent.setPath("");
-			parent.setType("dir");
+			parent.setType(MediaFile.TYPE.dir.toString());
 			mediaFiles.add(parent);
 
 			for (File f : file.listFiles()) {
@@ -133,9 +138,9 @@ public class RequestHandler {
 				mFile.setName(f.getName());
 				mFile.setPath(f.getAbsolutePath());
 				if (f.isDirectory()) {
-					mFile.setType("dir");
+					mFile.setType(MediaFile.TYPE.dir.toString());
 				} else {
-					mFile.setType("file");
+					mFile.setType(MediaFile.TYPE.file.toString());
 				}
 				if (mFile.isAlbum()) {
 					mediaFiles.add(mFile);
@@ -274,9 +279,9 @@ public class RequestHandler {
 	private void pl_delete(Map<String, String> parameters) throws NumberFormatException, MpdConnectException {
 		String id = parameters.get("id");
 		String type = parameters.get("type");
-		if ("leaf".equals(type)) {
+		if (PLAYLEAF.equals(type)) {
 			getPlayer().deleteLeaf(Long.parseLong(id));
-		} else if ("node".equals(type)) {
+		} else if (PLAYNODE.equals(type)) {
 			getPlayer().deleteNode(Long.parseLong(id));
 		}
 	}
@@ -292,25 +297,39 @@ public class RequestHandler {
 	private void in_enqueue(Map<String, String> parameters, boolean isPlay) throws MpdConnectException {
 		String input = parameters.get("input");
 		String inputType = parameters.get("input_type");
+		
 		if (PlayNode.TYPE.album.toString().equals(inputType)) {
 			Album album = gson.fromJson(input, Album.class);
 			addAlbumFile(album);
 			getPlayer().inEnqueue(album, isPlay);
-		} else if (MediaFile.TYPE.dir.toString().equals(inputType)) {
+		} 
+		else if (PlayNode.TYPE.dir.toString().equals(inputType)) {
 			getPlayer().inEnqueue(input, true, isPlay);
 		} 
 		else if (MediaFile.TYPE.file.toString().equals(inputType)) { 
 			getPlayer().inEnqueue(input, false, isPlay);
 		}
-		else if ("youtube".equals(inputType)) {
+		else if (PlayLeaf.TYPE.track.toString().equals(inputType)) {
+			Song song = gson.fromJson(input, Song.class);
+			getPlayer().inEnqueue(song, isPlay);
+		}
+		else if (PlayLeaf.TYPE.youtube.toString().equals(inputType)) {
 			YoutubeVideo video = gson.fromJson(input, YoutubeVideo.class);
 			getPlayer().inEnqueue(video, isPlay);
 		}
-		else if ("playlist".equals(inputType)) {
+		
+		else if (PLAYLIST.equals(inputType)) {
 			PlayList playlist = gson.fromJson(input, PlayList.class);
 			getPlayer().inEnqueue(playlist, isPlay);
 		}
-		
+		else if (PLAYNODE.equals(inputType)) {
+			PlayNode playnode = gson.fromJson(input, PlayNode.class);
+			getPlayer().inEnqueue(playnode, isPlay);
+		}
+		else if (PLAYLEAF.equals(inputType)) {
+			PlayLeaf playleaf = gson.fromJson(input, PlayLeaf.class);
+			getPlayer().inEnqueue(playleaf, isPlay);
+		}
 	}
 
 	private void in_play(Map<String, String> parameters) throws MpdConnectException {
@@ -350,9 +369,9 @@ public class RequestHandler {
 	private void pl_play(Map<String, String> parameters) throws MpdConnectException {
 		String id = parameters.get("id");
 		String type = parameters.get("type");
-		if ("leaf".equals(type)) {
+		if (PLAYLEAF.equals(type)) {
 			getPlayer().playPlaylistLeaf(Long.parseLong(id));
-		} else if ("node".equals(type)) {
+		} else if (PLAYNODE.equals(type)) {
 			getPlayer().playPlaylistNode(Long.parseLong(id));
 		} else {
 			getPlayer().playPlaylist();

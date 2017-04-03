@@ -67,7 +67,7 @@ public class PlayList {
 	
 	public List<PlayNode> getNodes() {
 		if (nodes == null) {
-			return Collections.emptyList();
+			nodes = new ArrayList<>();
 		}
 		return nodes;
 	}

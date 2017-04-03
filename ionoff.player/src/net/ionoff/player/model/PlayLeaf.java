@@ -5,7 +5,7 @@ public class PlayLeaf {
 	private static final String CURRENT = "current";
 
 	public enum TYPE {
-		file, youtube, karaoke;
+		file, track, youtube;
 	}
 	
 	private long id;
@@ -20,6 +20,8 @@ public class PlayLeaf {
 	private String author;
 	private String artists;
 	private String mrl;
+	
+	private long nodeId;
 	
 	public PlayLeaf() {
 		played = false;
@@ -136,5 +138,13 @@ public class PlayLeaf {
 
 	public void setMrl(String mrl) {
 		this.mrl = mrl;
+	}
+
+	public long getNodeId() {
+		return nodeId;
+	}
+	
+	public void setNodeId(long nodeId) {
+		this.nodeId = nodeId;
 	}
 }

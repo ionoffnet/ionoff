@@ -124,7 +124,7 @@ public class DeamonPlayer {
 			return null;
 		}
 		for (PlayLeaf leaf : playlist.getLeafs()) {
-			if (leaf.getUrl().equals(currentSong.getFile())) {
+			if (leaf.getMrl().equals(currentSong.getFile())) {
 				return leaf;
 			}
 		}
@@ -146,8 +146,8 @@ public class DeamonPlayer {
 		return State.stopped.toString();
 	}
 
-	public void playPlaylistLeaf(long leafId) {
-		PlayLeaf leaf = playlist.getLeaf(leafId);
+	public void playPlaylistLeaf(long leafIdx) {
+		PlayLeaf leaf = playlist.getLeaf(leafIdx);
 		if (leaf == null || songs == null || songs.isEmpty()) {
 			return;
 		}
@@ -159,20 +159,20 @@ public class DeamonPlayer {
 
 	private MPDSong getMPDSong(PlayLeaf leaf) {
 		for (MPDSong song : songs) {
-			if (song.getFile().equals(leaf.getUrl())) {
+			if (song.getFile().equals(leaf.getMrl())) {
 				return song;
 			}
 		}
 		return null;
 	}
 
-	public void playPlaylistNode(long nodeId) {
-		PlayNode node = playlist.getNode(nodeId);
+	public void playPlaylistNode(long nodeIdx) {
+		PlayNode node = playlist.getNode(nodeIdx);
 		if (node == null || !node.hasLeaf() || songs == null || songs.isEmpty()) {
 			return;
 		}
 		for (MPDSong song : songs) {
-			if (song.getFile().equals(node.getLeafs().get(0).getUrl())) {
+			if (song.getFile().equals(node.getLeafs().get(0).getMrl())) {
 				mpd.getPlayer().playSong(song);
 			}
 		}
@@ -229,7 +229,7 @@ public class DeamonPlayer {
 	private PlayLeaf createLeaf(Song song) {
 		PlayLeaf leaf = new PlayLeaf();
 		leaf.setName(song.getTitle());
-		leaf.setType(PlayLeaf.TYPE.file.toString());
+		leaf.setType(PlayLeaf.TYPE.track.toString());
 		leaf.setImage(song.getImage());
 		leaf.setMrl(song.getUrl());
 		leaf.setArtists(song.getArtists());
@@ -286,7 +286,7 @@ public class DeamonPlayer {
 		}
 		List<MPDSong> newSongs = new ArrayList<>();
 		for (PlayLeaf leaf : newNode.getLeafs()) {
-			MPDSong mpdSong = new MPDSong(leaf.getUrl(), leaf.getName());
+			MPDSong mpdSong = new MPDSong(leaf.getMrl(), leaf.getName());
 			newSongs.add(mpdSong);
 		}
 		mpd.getPlaylist().addSongs(newSongs);
@@ -300,7 +300,7 @@ public class DeamonPlayer {
 		addPlaylistNode(newNode);
 		List<MPDSong> newSongs = new ArrayList<>();
 		for (PlayLeaf leaf : newNode.getLeafs()) {
-			MPDSong mpdSong = new MPDSong(leaf.getUrl(), leaf.getName());
+			MPDSong mpdSong = new MPDSong(leaf.getMrl(), leaf.getName());
 			newSongs.add(mpdSong);
 		}
 		mpd.getPlaylist().addSongs(newSongs);
@@ -322,7 +322,7 @@ public class DeamonPlayer {
 			addPlaylistNode(node);
 			List<MPDSong> newSongs = new ArrayList<>();
 			for (PlayLeaf leaf : node.getLeafs()) {
-				MPDSong mpdSong = new MPDSong(leaf.getUrl(), leaf.getName());
+				MPDSong mpdSong = new MPDSong(leaf.getMrl(), leaf.getName());
 				newSongs.add(mpdSong);
 			}
 			mpd.getPlaylist().addSongs(newSongs);
@@ -474,7 +474,7 @@ public class DeamonPlayer {
 
 		MediaFile parent = new MediaFile();
 		parent.setName("..");
-		parent.setType("dir");
+		parent.setType(MediaFile.TYPE.dir.toString());
 		mediaFiles.add(parent);
 		
 		if (dir == null || dir.isEmpty()) {
@@ -489,9 +489,9 @@ public class DeamonPlayer {
 			mFile.setName(f.getPath());
 			mFile.setPath(f.getPath());
 			if (f.isDirectory()) {
-				mFile.setType("dir");
+				mFile.setType(MediaFile.TYPE.dir.toString());
 			} else {
-				mFile.setType("file");
+				mFile.setType(MediaFile.TYPE.file.toString());
 			}
 			if (!".albums".equals(mFile.getName())) {
 				mediaFiles.add(mFile);
@@ -502,5 +502,41 @@ public class DeamonPlayer {
 
 	public void updateFileDatabase() {
 		commandExecutor.sendCommand("update");
+	}
+
+	public void inEnqueue(PlayNode playNode, boolean isPlay) {
+		addPlaylistNode(playNode);
+		List<MPDSong> newSongs = new ArrayList<>();
+		for (PlayLeaf leaf : playNode.getLeafs()) {
+			MPDSong mpdSong = new MPDSong(leaf.getMrl(), leaf.getName());
+			newSongs.add(mpdSong);
+		}
+		mpd.getPlaylist().addSongs(newSongs);
+		if (isPlay) {
+			playPlaylistNode(playNode.getIdx());
+		}
+	}
+
+	public void inEnqueue(PlayLeaf playLeaf, boolean isPlay) {
+		PlayNode newNode = newPlaylistNode();
+		if (PlayLeaf.TYPE.file.toString().equals(playLeaf.getType())) {
+			newNode.setType(PlayNode.TYPE.dir.toString());
+		}
+		else if (PlayLeaf.TYPE.track.toString().equals(playLeaf.getType())) {
+			newNode.setType(PlayNode.TYPE.album.toString());
+		}
+		else if (PlayLeaf.TYPE.youtube.toString().equals(playLeaf.getType())) {
+			newNode.setType(PlayNode.TYPE.youtube.toString());
+		}
+		newNode.getLeafs().add(playLeaf);
+		inEnqueue(newNode, isPlay);
+	}
+
+	public void inEnqueue(Song song, boolean isPlay) {
+		PlayNode newNode = newPlaylistNode();
+		newNode.setType(PlayNode.TYPE.album.toString());
+		PlayLeaf leaf = createLeaf(song);
+		newNode.getLeafs().add(leaf);
+		inEnqueue(newNode, isPlay);
 	}
 }
