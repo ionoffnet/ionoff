@@ -87,10 +87,10 @@ public class DeamonPlayer {
 
 		MPDSong currentSong = mpd.getPlayer().getCurrentSong();
 		if (currentSong == null) {
-			status.setPlaylistNode(null);
+			status.setPlayNode(null);
 		} else {
 			PlayNode currentNode = getCurrentNode(mpd, currentSong);
-			status.setPlaylistNode(currentNode);
+			status.setPlayNode(currentNode);
 		}
 		
 		return status;
