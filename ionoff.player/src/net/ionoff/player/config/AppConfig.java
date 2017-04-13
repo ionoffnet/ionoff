@@ -12,6 +12,7 @@ public class AppConfig {
 	private static final AppConfig INSTANCE = new AppConfig();
 	
 	public final String UPDATE_SITE;
+	public final String DATA_SERVER_URL;
 	public String MPD_HOST;
 	public int MPD_PORT;
 	public boolean INTERVAL_UPDATE;
@@ -28,6 +29,7 @@ public class AppConfig {
 			ex.printStackTrace();
 		}
 		UPDATE_SITE = appProperties.getProperty("update_site");
+		DATA_SERVER_URL = appProperties.getProperty("data_server_url");
 		MPD_HOST = appProperties.getProperty("mpd_host");
 		try {
 			MPD_PORT = Integer.parseInt(appProperties.getProperty("mpd_port"));

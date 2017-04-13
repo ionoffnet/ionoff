@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.bff.javampd.command.MPDCommandExecutor;
 import org.bff.javampd.file.MPDFile;
 import org.bff.javampd.playlist.PlaylistChangeEvent;
@@ -13,6 +14,7 @@ import org.bff.javampd.server.MPD;
 import org.bff.javampd.song.MPDSong;
 
 import net.ionoff.player.config.AppConfig;
+import net.ionoff.player.config.UserConfig;
 import net.ionoff.player.exception.MpdConnectException;
 import net.ionoff.player.model.Album;
 import net.ionoff.player.model.MediaFile;
@@ -25,7 +27,9 @@ import net.ionoff.player.model.Status;
 import net.ionoff.player.model.YoutubeVideo;
 
 public class DeamonPlayer {
-
+	
+	private static final Logger LOGGER = Logger.getLogger(DeamonPlayer.class.getName());
+	
 	private MPD mpd;
 	private Status status;
 	private PlayList playlist;
@@ -322,6 +326,9 @@ public class DeamonPlayer {
 			addPlaylistNode(node);
 			List<MPDSong> newSongs = new ArrayList<>();
 			for (PlayLeaf leaf : node.getLeafs()) {
+				if (PlayLeaf.TYPE.youtube.toString().equals(leaf.getType())) {
+					leaf.setMrl(getYoutubeMrl(leaf.getUrl()));
+				}
 				MPDSong mpdSong = new MPDSong(leaf.getMrl(), leaf.getName());
 				newSongs.add(mpdSong);
 			}
@@ -508,6 +515,9 @@ public class DeamonPlayer {
 		addPlaylistNode(playNode);
 		List<MPDSong> newSongs = new ArrayList<>();
 		for (PlayLeaf leaf : playNode.getLeafs()) {
+			if (PlayLeaf.TYPE.youtube.toString().equals(leaf.getType())) {
+				leaf.setMrl(getYoutubeMrl(leaf.getUrl()));
+			}
 			MPDSong mpdSong = new MPDSong(leaf.getMrl(), leaf.getName());
 			newSongs.add(mpdSong);
 		}
@@ -526,6 +536,7 @@ public class DeamonPlayer {
 			newNode.setType(PlayNode.TYPE.album.toString());
 		}
 		else if (PlayLeaf.TYPE.youtube.toString().equals(playLeaf.getType())) {
+			playLeaf.setMrl(getYoutubeMrl(playLeaf.getUrl()));
 			newNode.setType(PlayNode.TYPE.youtube.toString());
 		}
 		newNode.getLeafs().add(playLeaf);
@@ -538,5 +549,18 @@ public class DeamonPlayer {
 		PlayLeaf leaf = createLeaf(song);
 		newNode.getLeafs().add(leaf);
 		inEnqueue(newNode, isPlay);
+	}
+	
+
+	private String getYoutubeMrl(String youtubeId) {
+		try {
+			String mrl = HttpRequestUtil.sendHttpGETRequest(AppConfig.getInstance().DATA_SERVER_URL 
+					+ "videos/" + youtubeId + "/audiourl?mac=" + UserConfig.getInstance().LICENSE_KEY);
+			return mrl;
+		}
+		catch (Exception e) {
+			LOGGER.error(e.getMessage(), e);
+			return null;
+		}
 	}
 }
