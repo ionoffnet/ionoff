@@ -1,0 +1,29 @@
+15. Install MPD
+15.1	Download latest version from https://www.musicpd.org or https://github.com/MusicPlayerDaemon/MPD
+		
+15.2
+		tar xf mpd-version.tar.xz
+		cd mpd-version
+
+15.3 	Install library and dependencies
+		sudo apt-get install g++ libmad0-dev libmpg123-dev libid3tag0-dev   libflac-dev libvorbis-dev libopus-dev   libadplug-dev libaudiofile-dev \
+		libsndfile1-dev libfaad-dev   libfluidsynth-dev libgme-dev libmikmod-dev libmodplug-dev   libmpcdec-dev libwavpack-dev libwildmidi-dev \
+		libsidplay2-dev libsidutils-dev libresid-builder-dev   libavcodec-dev libavformat-dev   libmp3lame-dev   libsamplerate0-dev libsoxr-dev \
+		libbz2-dev libcdio-paranoia-dev libiso9660-dev libmms-dev   libzzip-dev   libcurl4-gnutls-dev libyajl-dev libexpat-dev  \
+		libasound2-dev libao-dev libjack-jackd2-dev libopenal-dev   libpulse-dev libroar-dev libshout3-dev   libmpdclient-dev  \
+		libnfs-dev libsmbclient-dev   libupnp-dev   libavahi-client-dev   libsqlite3-dev   libsystemd-dev libwrap0-dev   libcppunit-dev xmlto \
+		libboost-dev   libicu-dev
+
+15.4 	sudo ./configure
+		sudo make
+		sudo make install
+		
+		sudo mkdir /var/log/mpd
+		sudo chmod 777 -R /var/lib/mpd/
+		sudo mkdir /var/lib/mpd/playlists
+		
+		sudo nano /etc/passwd
+			
+		->> Add line 
+		mpd:x:109:29::/var/lib/mpd:/bin/false
+
