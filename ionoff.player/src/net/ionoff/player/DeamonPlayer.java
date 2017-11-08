@@ -31,6 +31,7 @@ public class DeamonPlayer {
 	private static final Logger LOGGER = Logger.getLogger(DeamonPlayer.class.getName());
 	
 	private MPD mpd;
+	private int volume;
 	private Status status;
 	private PlayList playlist;
 	private long playlistVersion;
@@ -73,11 +74,17 @@ public class DeamonPlayer {
 	}
 
 	public Status loadStatus() {
-		status = new Status();
+		if (status == null) {
+			status = new Status();
+		}
 		status.setState(toState(mpd.getPlayer().getStatus()));
 		status.setTime(mpd.getPlayer().getElapsedTime());
 		status.setLength(mpd.getPlayer().getTotalTime());
-		status.setVolume(mpd.getPlayer().getVolume());
+		int mpdVolume = mpd.getPlayer().getVolume();
+		if (volume == 0) {
+			volume = mpdVolume;
+		}
+		status.setVolume(volume);
 		if (status.getLength() == 0) {
 			status.setPosition(0f);
 		}
@@ -391,14 +398,15 @@ public class DeamonPlayer {
 	}
 
 	public void setVolume(int vol) {
+		this.volume = vol;
 		mpd.getPlayer().setVolume(vol);
 	}
 
 	public int getVolume() {
-		if (status == null) {
-			return mpd.getPlayer().getVolume();
+		if (volume == 0) {
+			volume = mpd.getPlayer().getVolume();
 		}
-		return status.getVolume();
+		return this.volume;
 	}
 
 	public void emtyPlaylist() {
@@ -549,8 +557,7 @@ public class DeamonPlayer {
 		PlayLeaf leaf = createLeaf(song);
 		newNode.getLeafs().add(leaf);
 		inEnqueue(newNode, isPlay);
-	}
-	
+	}	
 
 	private String getYoutubeMrl(String youtubeId) {
 		try {

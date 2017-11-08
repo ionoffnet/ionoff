@@ -16,7 +16,7 @@ public class Status {
 	private String version;
 	private float position;
 	private boolean repeat;
-	private PlayNode playNode;
+	private PlayNode playNode;	
 	
 	public boolean getFullscreen() {
 		return fullscreen;

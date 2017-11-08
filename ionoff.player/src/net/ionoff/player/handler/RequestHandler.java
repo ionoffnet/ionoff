@@ -159,7 +159,7 @@ public class RequestHandler {
 	private final Gson gson;
 	private static DeamonPlayer deamonPlayer;
 
-	private DeamonPlayer getPlayer() throws MpdConnectException {
+	private synchronized DeamonPlayer getPlayer() throws MpdConnectException {
 		if (deamonPlayer == null) {
 			deamonPlayer = new DeamonPlayer();
 		}
@@ -219,13 +219,14 @@ public class RequestHandler {
 		if (val.equals("mute")) {
 			getPlayer().mute();
 		} else if (val.equals("+")) {
-			int vol = getPlayer().getVolume() + 5;
+			int vol = getPlayer().getVolume() + 4;
 			getPlayer().setVolume(vol);
 		} else if (val.equals("-")) {
-			int vol = getPlayer().getVolume() - 5;
+			int vol = getPlayer().getVolume() - 4;
 			getPlayer().setVolume(vol);
 		} else {
-			getPlayer().setVolume(Integer.parseInt(val));
+			int vol = Integer.parseInt(val);
+			getPlayer().setVolume(vol);
 		}
 	}
 
